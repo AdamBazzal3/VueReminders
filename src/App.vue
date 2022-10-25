@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-
     <b-navbar variant="dark" type="dark">
       <b-navbar-nav>
-        <b-nav-item href="/">Home</b-nav-item>
-        <b-nav-item-dropdown text="Reminders" right>
+        <b-nav-item ><router-link to="/" class="nav-link">Home</router-link></b-nav-item>
+        <b-nav-item-dropdown class="nav-link" text="Reminders" right>
           <b-dropdown-item><router-link to="/AddReminder" class="dropdown-item">add a reminder</router-link></b-dropdown-item>
           <b-dropdown-item><router-link to="/RemindersList" class="dropdown-item">reminder list</router-link></b-dropdown-item>
         </b-nav-item-dropdown>
 
-        <b-nav-item-dropdown text="User" right>
+        <b-nav-item-dropdown class="nav-link" text="User" right>
           <b-dropdown-item ><router-link v-if="!isLoggedIn" to="/SignIn" class="dropdown-item">Login</router-link></b-dropdown-item>
+          <b-dropdown-item ><router-link v-if="!isLoggedIn" to="/SignUp" class="dropdown-item">Sign up</router-link></b-dropdown-item>
           <b-dropdown-item @click="signOut" v-if="isLoggedIn">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
